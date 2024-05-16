@@ -32,14 +32,14 @@ RUN pip install -e . uvicorn ffmpeg
 RUN pip install -r requirements.txt
 
 # Download and extract the checkpoint file
-RUN apt-get update && apt-get install -y unzip wget
+RUN dnf update -y && dnf install -y unzip wget ffmpeg
 RUN wget https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip
 RUN unzip checkpoints_v2_0417.zip -d ./openvoice
 RUN rm checkpoints_v2_0417.zip
 RUN mv resources openvoice/resources
 
 # Make port 8000 available to the world outside this container
-EXPOSE 8000
+EXPOSE 7860
 EXPOSE 7860
 
 RUN cd /app/OpenVoice_server/openvoice

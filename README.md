@@ -175,3 +175,4 @@ with open("output.wav", "wb") as f:
 The response will be the synthesized speech audio file. In the headers of the response are 2 additional fields:
 - x-elapsed-time: The time taken to synthesize the speech in seconds.
 - x-device-used: The device used for synthesis.
+# voiceClone
